@@ -1,5 +1,6 @@
 # This is a basic workflow to help you get started with Actions
-name: Hello World
+name: Short Sleepy Matrix
+run-name: Run short sleepy matrix on ${{ inputs.arc_name }}
 
 # Controls when the action will run. 
 on:
