@@ -5,13 +5,29 @@ name: Hello World
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+      inputs:
+        arc_name:
+          description: 'Target ARC name used for 'runs-on' in job'
+          required: true
+          default: "poizen-runner-set"
+        delay:
+          description: 'how long to sleep in seconds'
+          required: true
+          default: "20"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  run-matrix:
+    strategy:
+       fail-fast: false
+       matrix: 
+         job: [1,2,3]
+    runs-on: ${{ inputs.arc_name}}
+    
   # This workflow contains a single job called "build"
-  build:
+  #build:
     # The type of runner that the job will run on
-    runs-on: self-hosted
+  #  runs-on: self-hosted
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
