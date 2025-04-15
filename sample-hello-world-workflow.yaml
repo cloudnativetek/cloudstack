@@ -21,8 +21,13 @@ jobs:
     strategy:
        fail-fast: false
        matrix: 
-         job: [1,2,3]
-    runs-on: ${{ inputs.arc_name}}
+         job: [1, 2, 3]
+    runs-on: ${{ inputs.arc_name }}
+    steps:
+     - name: simple
+       run: |
+         echo "Hello from: " ${{ matrix.version }}
+         sleep ${{ inputs.delay }}
     
   # This workflow contains a single job called "build"
   #build:
