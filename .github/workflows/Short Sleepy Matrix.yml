@@ -10,7 +10,7 @@ on:
         arc_name:
           description: 'Target ARC name used for `runs-on` in job'
           required: true
-          default: "poizen-runner-set"
+          default: "ubuntu-20-04-16g-new"
         delay:
           description: 'how long to sleep in seconds'
           required: true
